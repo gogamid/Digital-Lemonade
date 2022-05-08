@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Digital Lemonade</string>
+    <string name="click_to_select_a_lemon">Click to select a lemon!</string>
 </resources>
