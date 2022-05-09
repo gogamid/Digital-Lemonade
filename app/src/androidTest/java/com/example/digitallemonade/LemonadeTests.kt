@@ -30,4 +30,11 @@ class LemonadeTests : BaseTest() {
     testState(R.string.click_to_juice_a_lemon, R.drawable.lemon_squeeze)
   }
 
+  @Test
+  fun test_squeezing_proceeds_to_drink_state(){
+    onView(withId(R.id.imageButton)).perform(click())
+    juiceLemon()
+    testState(R.string.click_to_drink_a_lemon, R.drawable.lemon_drink)
+  }
+
 }
