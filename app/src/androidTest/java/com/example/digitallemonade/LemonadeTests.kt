@@ -37,4 +37,21 @@ class LemonadeTests : BaseTest() {
     testState(R.string.click_to_drink_a_lemon, R.drawable.lemon_drink)
   }
 
+  @Test
+  fun test_drinking_juice_proceeds_to_restart_state(){
+    onView(withId(R.id.imageButton)).perform(click())
+    juiceLemon()
+    onView(withId(R.id.imageButton)).perform(click())
+    testState(R.string.click_to_start_again, R.drawable.lemon_restart)
+  }
+
+  @Test
+  fun test_restarting_proceeds_to_pick_lemon_state(){
+    onView(withId(R.id.imageButton)).perform(click())
+    juiceLemon()
+    onView(withId(R.id.imageButton)).perform(click())
+    onView(withId(R.id.imageButton)).perform(click())
+    testState(R.string.click_to_select_a_lemon, R.drawable.lemon_tree)
+  }
+
 }
